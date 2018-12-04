@@ -1,0 +1,38 @@
+{
+  "name": "some-math",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plasticut/some-math.git"
+  },
+  "author": "plasticut@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plasticut/some-math/issues"
+  },
+  "homepage": "https://github.com/plasticut/some-math#readme",
+  "engines": {
+    "node": "8.9.0"
+  },
+  "config": {
+    "test_timeout": 10000,
+    "test_path": "src",
+    "test_ext": "spec.js"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint-n-fix": "eslint . --fix",
+    "test": "NODE_ENV=test mocha --recursive --exit --reporter=spec *.spec.js",
+    "coverage": "nyc npm test && nyc report --reporter=text-summary",
+    "report": "nyc report && nyc report --reporter=text-summary && nyc report --reporter=lcov && python -mwebbrowser coverage/lcov-report/index.html"
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "eslint": "5.9.0",
+    "eslint-config-google": "0.11.0",
+    "mocha": "5.2.0",
+    "nyc": "13.1.0"
+  }
+}
